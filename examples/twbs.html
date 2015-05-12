@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ro-dropdown example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="../dist/ro-dropdown.js"></script>
+  </head>
+  <body>
+
+
+    <div class="container">
+
+      <h1>Bootstrap Example</h1>
+
+      <ro-dropdown>
+        <ro-dropdown-toggle class="btn btn-primary">
+          Click Me <span class="caret"></span>
+        </ro-dropdown-toggle>
+        <ro-dropdown-list>
+          <li ng-repeat="item in ['Hello', 'Dropdown', 'Items']">
+            <a ng-href="#{{ item }}">{{ item }}</a>
+          </li>
+        </ro-dropdown-list>
+      </ro-dropdown>
+
+    </div>
+
+    <script>
+      angular.module('example', ['ro.dropdown']);
+      angular.bootstrap(document.body, ['example'])
+    </script>
+  </body>
+</html>
