@@ -1,6 +1,6 @@
 {
   "name": "ro-dropdown",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple dropdown component for AngularJS apps",
   "main": "gulpfile.js",
   "scripts": {},
