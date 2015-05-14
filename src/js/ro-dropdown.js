@@ -31,7 +31,6 @@ angular.module('ro.dropdown')
         dropdown.close = function() {
           angular.element('.dropdown-backdrop').remove();
           $element.removeClass('open');
-          dropdown.resetSelection();
         };
 
         dropdown.isOpen = function() {
