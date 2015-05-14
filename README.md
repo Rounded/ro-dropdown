@@ -5,8 +5,8 @@ A simple dropdown component for Angular apps. Markup and behavior only; bring yo
 ## Example
 
 ``` html
-<ro-dropdown>
-  <ro-dropdown-toggle>Click Me</ro-dropdown-toggle>
+<ro-dropdown data-tag-name="li">
+  <ro-dropdown-toggle data-tag-name="a">Click Me</ro-dropdown-toggle>
   <ro-dropdown-list>
     <li ng-repeat="item in items">
       <a ng-href="{{ item.url }}">{{ item.name }}</a>

@@ -22,7 +22,7 @@ angular.module('ro.dropdown')
       replace: true,
       transclude: true,
       template: function(tElem, tAttrs) {
-        var tag = tAttrs.tagName || 'button';
+        var tag = tAttrs.tagName || 'a';
         var html = '<' + tag + ' class="dropdown-toggle" data-ng-attr-id="{{ dropdown.toggleId }}" data-ng-click="dropdown.open()" data-ng-transclude></' + tag + '>';
         return html;
       },
@@ -43,7 +43,11 @@ angular.module('ro.dropdown')
       restrict: 'EA',
       replace: true,
       transclude: true,
-      templateUrl: 'ro-dropdown.html',
+      template: function(tElem, tAttrs) {
+        var tag = tAttrs.tagName || 'div';
+        var html = '<' + tag + ' class="dropdown" data-ng-transclude></' + tag + '>';
+        return html;
+      },
       scope: true,
       controller: ['$scope', '$element', function($scope, $element) {
 

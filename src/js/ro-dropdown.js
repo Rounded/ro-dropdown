@@ -7,7 +7,11 @@ angular.module('ro.dropdown')
       restrict: 'EA',
       replace: true,
       transclude: true,
-      templateUrl: 'ro-dropdown.html',
+      template: function(tElem, tAttrs) {
+        var tag = tAttrs.tagName || 'div';
+        var html = '<' + tag + ' class="dropdown" data-ng-transclude></' + tag + '>';
+        return html;
+      },
       scope: true,
       controller: ['$scope', '$element', function($scope, $element) {
 
