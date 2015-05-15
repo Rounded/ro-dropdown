@@ -9,6 +9,7 @@ angular.module('ro.dropdown')
       require: '^roDropdown',
       link: function(scope, elem, attrs, dropdown) {
         scope.dropdown = dropdown;
+        elem.on('click touchstart', 'a', dropdown.close);
       }
     }
   })

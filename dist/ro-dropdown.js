@@ -11,6 +11,7 @@ angular.module('ro.dropdown')
       require: '^roDropdown',
       link: function(scope, elem, attrs, dropdown) {
         scope.dropdown = dropdown;
+        elem.on('click touchstart', 'a', dropdown.close);
       }
     }
   })
@@ -26,7 +27,7 @@ angular.module('ro.dropdown')
         var html = '<' + tag + ' class="dropdown-toggle" data-ng-attr-id="{{ dropdown.toggleId }}" data-ng-click="dropdown.open()" data-ng-transclude></' + tag + '>';
         return html;
       },
-      scope: true,
+      scope: false,
       require: '^roDropdown',
       link: function(scope, elem, attrs, dropdown) {
         scope.dropdown = dropdown;
@@ -59,7 +60,7 @@ angular.module('ro.dropdown')
         var backdropHtml = '<div class="dropdown-backdrop"></div>';
 
         dropdown.open = function() {
-          $element.addClass('open');
+          angular.element($element[0]).addClass('open');
           angular.element('body').append(backdropHtml)
           angular.element('.dropdown-backdrop').on('click touchstart', dropdown.close)
         };
@@ -75,8 +76,6 @@ angular.module('ro.dropdown')
 
         // store a selector for focusable elements
         var focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
-
-        $element.on('click touchstart', 'a', dropdown.close);
 
         $element.on('keydown', function(evt) {
 

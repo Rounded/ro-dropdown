@@ -9,7 +9,7 @@ angular.module('ro.dropdown')
         var html = '<' + tag + ' class="dropdown-toggle" data-ng-attr-id="{{ dropdown.toggleId }}" data-ng-click="dropdown.open()" data-ng-transclude></' + tag + '>';
         return html;
       },
-      scope: true,
+      scope: false,
       require: '^roDropdown',
       link: function(scope, elem, attrs, dropdown) {
         scope.dropdown = dropdown;
