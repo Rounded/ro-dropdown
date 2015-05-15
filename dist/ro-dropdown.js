@@ -60,9 +60,10 @@ angular.module('ro.dropdown')
         var backdropHtml = '<div class="dropdown-backdrop"></div>';
 
         dropdown.open = function() {
-          angular.element($element[0]).addClass('open');
-          angular.element('body').append(backdropHtml)
-          angular.element('.dropdown-backdrop').on('click touchstart', dropdown.close)
+          $element.addClass('open');
+          angular.element(backdropHtml)
+            .insertBefore($element.find('.dropdown-menu'))
+            .on('click touchstart', dropdown.close);
         };
 
         dropdown.close = function() {
