@@ -1,1 +1,1 @@
-angular.module('ro.dropdown', []);
+angular.module('ro.dropdown', ['ngTouch']);
